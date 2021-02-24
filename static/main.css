@@ -1,17 +1,146 @@
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
+@font-face {
+	font-family: body-text;
+	src: url(fonts/LexendDeca-Regular.ttf);
+}
+
 body {
-	font-family: sans-serif;
+	font-family: body-text, sans-serif;
 	background: #FEFEFE;
 	color: #333;
 }
 
-main {
-	padding-top: 1em;
-	max-width: 40em;
+h1, h2 {
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+h1 {
+	font-size: 1.5em;
+	line-height: 1.75;
+}
+
+main h1 {
+	padding: 0.2rem 0.5rem 0.25rem;
+	vertical-align: top;
+}
+
+h2 {
+	font-size: 1.25em;
+}
+
+ul {
+	list-style-type: square;
+	list-style-position: inside;
+}
+
+ul li {
+	margin-bottom: 0.25em;
+}
+
+.dataTables_paginate {
+	justify-content: flex-end;
+}
+
+.dataTables_paginate > .paginate_button {
+	font-weight: bold;
+}
+
+.dataTables_paginate .previous.paginate_button {
+	order: 3;
+}
+
+.dataTables_paginate .next.paginate_button {
+	order: 4;
+}
+
+.dataTables_paginate,
+.dt-actions,
+.dt-pages {
+	margin-top: 0.5rem;
+	display: flex;
+	width: 100%;
+	padding: 0 0.5rem;
+	position: relative;
+}
+.dt-actions,
+.dt-pages {
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.dataTables_filter {
+	margin-top: 0.5em;
+}
+
+.dataTables_filter,
+.dt-buttons {
+	float: none !important;
+	text-align: start !important;
+}
+
+.dataTables_length {
+	margin-top: 0.65em;
+}
+
+main table {
+	width: 100% !important;
+}
+
+var {
+	position: relative;
+	font-style: normal;
+	white-space: nowrap;
+	max-width: 100%;
+	overflow: hidden;
+	padding: 0 0.2em;
+	text-overflow: ellipsis;
+	display: inline-block;
+	vertical-align: top;
+}
+
+var:before {
+	content: "";
+	position: absolute;
+	top: 0.1em;
+	bottom: 0.1em;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.1);
+}
+
+a {
+	text-decoration: none;
+}
+
+article {
+	max-width: 40rem;
 	margin: 0 auto;
 	overflow: hidden;
+}
+
+@media only screen and (max-width: 35rem) {
+	.dt-actions > * {
+		display: block;
+		width: 100%;
+		margin-top: 0.5em;
+	}
+}
+
+article > * {
+	margin-bottom: 1rem;
+}
+
+article details {
+	margin-top: -0.5rem;
+}
+
+details,
+aside,
+footer {
+	padding: 0 1rem;
 }
 
 .loader {
@@ -20,6 +149,10 @@ main {
 
 .loading {
 	overflow: hidden;
+}
+
+a .badge {
+	vertical-align: -0.25em;
 }
 
 .loading .loader {
@@ -39,20 +172,3 @@ main {
 	right: 0;
 	bottom: 0;
 }
-
-main table {
-	width: 100% !important;
-}
-
-.datatable-header {
-    min-width: 100%;
-}
-
-.datatable-body {
-    min-width: 100%;
-}
-
-
-/*@media (prefers-color-scheme: dark) {
-	body { background: #333; color: #FEFEFE; }
-}*/

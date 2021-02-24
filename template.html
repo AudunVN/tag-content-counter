@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>{%!TITLE!%}</title>
+		<title>{%!SITE-TITLE!%}</title>
 
 		<link rel="stylesheet" href="../static/datatables/datatables.min.css">
 		<link rel="stylesheet" href="../static/main.css">
@@ -19,11 +19,36 @@
 			Loading...
 		</div>
 
-		<main>
-			<table class="display">
-				{%!TABLE-CONTENTS!%}
-			</table>
-		</main>
+		<article>
+			<main>
+				<header>
+					<h1>{%!TABLE-TITLE!%}</h1>
+				</header>
+				{%!DESCRIPTION!%}
+				<table class="display">
+					{%!TABLE-CONTENTS!%}
+				</table>
+			</main>
+
+			<aside>
+				<header>
+					<h2>Input Details</h2>
+				</header>
+				<ul>
+					<li>Input: <var>{%!INPUT!%}</var></li>
+					<li>Tag name: <var>{%!TAG!%}</var></li>
+					<li>Scanned tags: {%!TAG-COUNT!%}</li>
+					<li>Unique tag contents: {%!UNIQUE-COUNT!%}</li>
+					<li>Start time: {%!START-TIME!%}</li>
+					<li>End time: {%!END-TIME!%}</li>
+					<li>Time taken: {%!RUNTIME!%}</li>
+				</ul>
+			</aside>
+
+			<footer>
+				Generated using <a href="https://github.com/AudunVN/tag-content-counter">Tag Content Counter <img class="badge" src="https://img.shields.io/github/stars/AudunVN/tag-content-counter?style=social"></a> by <a href="https://github.com/AudunVN">Space (AudunVN)</a>
+			</footer>
+		</article>
 
 		<script src="../static/datatables/datatables.min.js"></script>
 
@@ -32,10 +57,10 @@
 				let outputFile = window.location.pathname.split("/").pop().slice(0, -5);
 
 				$.getJSON(`${outputFile}.json`, function(output) {
-					let itemCounters = Object.entries(output.itemCounters);
+					let counters = Object.entries(output.counters);
 
 					$("main table").DataTable({
-						dom: "Bfrtip",
+						dom: '<"dt-actions"fB><"dt-pages"il>rtp',
 						buttons: [
 							{
 								extend: 'copy',
@@ -47,11 +72,24 @@
 								}
 							}, 'csv', 'excel'
 						],
-						data: itemCounters,
+						language: {
+							search: "Search",
+							paginate: {
+								previous: "❮",
+								next: "❯"
+							},
+							aria: {
+								paginate: {
+									previous: "Previous page",
+									next: "Next page"
+								}
+							}
+						},
+						data: counters,
 						deferRender: true,
 						responsive: true,
 						order: [[ 1, "desc" ]],
-						pageLength: 20,
+						pageLength: 25,
 						"initComplete": function(settings, json) {
 							document.body.classList.remove("loading");
 						}

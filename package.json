@@ -20,5 +20,8 @@
 		"node-json2html": "^1.4.0",
 		"node-stream-zip": "^1.13.1",
 		"sax": "^1.2.4"
+	},
+	"devDependencies": {
+		"eslint": "^7.20.0"
 	}
 }
