@@ -23,11 +23,11 @@ Outputs `.json` and `.html` files with tag content counts for `inspire-gn.zip`. 
 
 ## Current data
 ```bash
-node counter.js "app:langnavn" "Basisdata_0000_Norge_25833_StedsnavnKomplettSSR_GML.zip" "Place Name Frequency in Norway" "Shows the amount of times all official place names in Norway are used. Data from Kartverket."
+node counter.js "app:langnavn" "C:\Users\Space\Downloads\Basisdata_0000_Norge_25833_StedsnavnKomplettSSR_GML.zip" "Place Name Frequency in Norway" "Shows the amount of times all official place names in Norway are used. Data from Kartverket."
 ```
 Complete place name frequencies for Norway.
 
 ```bash
-node counter.js "app:adressenavn" "Basisdata_0000_Norge_4258_MatrikkelenVegadresse_GML.zip" "Address Street Name Frequency in Norway" "Shows the amount of addresses per street name in Norway. Data from Kartverket."
+node counter.js "app:adressenavn" "C:\Users\Space\Downloads\Basisdata_0000_Norge_4258_MatrikkelenVegadresse_GML.zip" "Address Street Name Frequency in Norway" "Shows the amount of addresses per street name in Norway. Data from Kartverket."
 ```
 Complete address street name frequencies for Norway.
