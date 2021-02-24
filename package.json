@@ -1,24 +1,24 @@
 {
-  "name": "tag-content-counter",
-  "version": "1.0.0",
-  "description": "",
-  "main": "counter.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AudunVN/tag-content-counter.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AudunVN/tag-content-counter/issues"
-  },
-  "homepage": "https://github.com/AudunVN/tag-content-counter#readme",
-  "dependencies": {
-    "node-json2html": "^1.4.0",
-    "node-stream-zip": "^1.13.1",
-    "sax": "^1.2.4"
-  }
+	"name": "tag-content-counter",
+	"version": "1.0.0",
+	"description": "",
+	"main": "counter.js",
+	"scripts": {
+		"full-export": ""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AudunVN/tag-content-counter.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/AudunVN/tag-content-counter/issues"
+	},
+	"homepage": "https://github.com/AudunVN/tag-content-counter#readme",
+	"dependencies": {
+		"node-json2html": "^1.4.0",
+		"node-stream-zip": "^1.13.1",
+		"sax": "^1.2.4"
+	}
 }
