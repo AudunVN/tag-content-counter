@@ -10,6 +10,15 @@
 		<link rel="stylesheet" href="../static/main.css">
 	</head>
 	<body>
+		<script>
+			/* we have JS, load incoming */
+			document.body.classList.add("loading");
+		</script>
+
+		<div class="loader">
+			Loading...
+		</div>
+
 		<main>
 			<table class="display">
 				{%!TABLE-CONTENTS!%}
@@ -26,12 +35,26 @@
 					let itemCounters = Object.entries(output.itemCounters);
 
 					$("main table").DataTable({
-						dom: "frtip",
+						dom: "Bfrtip",
+						buttons: [
+							{
+								extend: 'copy',
+								text: 'Copy page',
+								exportOptions: {
+									modifier: {
+										page: 'current'
+									}
+								}
+							}, 'csv', 'excel'
+						],
 						data: itemCounters,
 						deferRender: true,
 						responsive: true,
 						order: [[ 1, "desc" ]],
-						pageLength: 20
+						pageLength: 20,
+						"initComplete": function(settings, json) {
+							document.body.classList.remove("loading");
+						}
 					});
 				});
 			});

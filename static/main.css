@@ -2,6 +2,7 @@
 html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
 body {
+	font-family: sans-serif;
 	background: #FEFEFE;
 	color: #333;
 }
@@ -11,6 +12,32 @@ main {
 	max-width: 40em;
 	margin: 0 auto;
 	overflow: hidden;
+}
+
+.loader {
+	display: none;
+}
+
+.loading {
+	overflow: hidden;
+}
+
+.loading .loader {
+	z-index: 10;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 1rem 0.1rem inset rgba(0,0,0,0.5);
+
+	font-size: 2em;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 main table {
